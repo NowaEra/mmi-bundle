@@ -1,0 +1,12 @@
+parameters:
+    mmi.app.front_controller.class: Mmi\App\FrontController
+
+services:
+    mmi_front_controller_factory:
+        class: "%mmi.app.front_controller.class%"
+
+    mmi_front_controller:
+        class: "%mmi.app.front_controller.class%"
+        factory: ["@mmi_front_controller_factory", "getInstance"]
+        calls:
+            - ['setRouter', ['@mmi_router']]

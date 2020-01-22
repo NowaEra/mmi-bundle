@@ -3,10 +3,10 @@ parameters:
     mmi.mvc.router_config.class: Mmi\Mvc\RouterConfig
 
 services:
+    mmi_router_config:
+        class: "%mmi.mvc.router_config.class%"
+
     mmi_router:
         class: "%mmi.mvc.router.class%"
         arguments:
             - "@mmi_router_config"
-
-    mmi_router_config:
-        class: "%mmi.mvc.router_config.class%"

@@ -33,5 +33,7 @@ class MmiExtension extends Extension
             )
         );
         $loader->load('router.yaml');
+        $loader->load('navigation.yaml');
+        $loader->load('core.yaml');
     }
 }
