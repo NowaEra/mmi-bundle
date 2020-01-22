@@ -1,0 +1,14 @@
+{
+    "name": "mmi/mmi-bundle",
+    "autoload": {
+        "psr-4": {
+            "NowaEra\\MmiBundle\\": "src/"
+        }
+    },
+    "require": {
+        "mmi/mmi": "^3.10",
+        "symfony/http-kernel": "^5.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/config": "^5.0"
+    }
+}
