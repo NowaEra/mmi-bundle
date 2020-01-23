@@ -9,6 +9,7 @@
         "mmi/mmi": "dev-master@dev",
         "symfony/http-kernel": "^5.0",
         "symfony/dependency-injection": "^5.0",
-        "symfony/config": "^5.0"
+        "symfony/config": "^5.0",
+        "symfony/yaml": "^5.0"
     }
 }
