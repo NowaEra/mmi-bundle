@@ -1,5 +1,5 @@
 {
-    "name": "mmi/mmi-bundle",
+    "name": "nowaera/mmi-bundle",
     "autoload": {
         "psr-4": {
             "NowaEra\\MmiBundle\\": "src/"
