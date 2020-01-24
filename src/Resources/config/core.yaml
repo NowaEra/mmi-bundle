@@ -1,12 +1,13 @@
 parameters:
     mmi.app.front_controller.class: Mmi\App\FrontController
+    mmi.app.front_controller_factory.class: NowaEra\MmiBundle\Factory\FrontControllerFactory
 
 services:
     mmi_front_controller_factory:
-        class: "%mmi.app.front_controller.class%"
+        class: "%mmi.app.front_controller_factory.class%"
 
     mmi_front_controller:
         class: "%mmi.app.front_controller.class%"
-        factory: ["@mmi_front_controller_factory", "getInstance"]
+        factory: ["@mmi_front_controller_factory", "create"]
         calls:
             - ['setRouter', ['@mmi_router']]

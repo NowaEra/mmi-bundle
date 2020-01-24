@@ -8,5 +8,8 @@ services:
 
     mmi_navigation_config_event_listener:
         class: "%mmi.navigation_config.event_listener.class%"
+        arguments:
+            - "@event_dispatcher"
+            - "@mmi_navigation_config"
         tags:
             - { name: 'kernel.event_listener', event: 'kernel.request', method: 'onKernelRequest' }
