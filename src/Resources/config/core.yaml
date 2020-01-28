@@ -1,13 +1,27 @@
 parameters:
     mmi.app.front_controller.class: Mmi\App\FrontController
     mmi.app.front_controller_factory.class: NowaEra\MmiBundle\Factory\FrontControllerFactory
-
+    mmi.mvc.view.class: Mmi\Mvc\View
+    mmi.mvc.structure.class: NowaEra\MmiBundle\Mvc\Structure
+    mmi.mvc.structure_parser.class: NowaEra\MmiBundle\Mvc\StructureParser
 services:
+    mmi_view:
+        class: "%mmi.mvc.view.class%"
+
     mmi_front_controller_factory:
         class: "%mmi.app.front_controller_factory.class%"
+
+    mmi_structure_parser:
+        class: "%mmi.mvc.structure_parser.class%"
+
+    mmi_structure:
+        class: "%mmi.mvc.structure.class%"
+        arguments: ["@mmi_structure_parser"]
 
     mmi_front_controller:
         class: "%mmi.app.front_controller.class%"
         factory: ["@mmi_front_controller_factory", "create"]
         calls:
             - ['setRouter', ['@mmi_router']]
+            - ['setView', ['@mmi_view']]
+            - ['setStructure', ['%mmi.structure.array%']]

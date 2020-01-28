@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace NowaEra\MmiBundle;
 
+use NowaEra\MmiBundle\DependencyInjection\CompilerPass\MaiStructureCompilerPass;
 use NowaEra\MmiBundle\DependencyInjection\CompilerPass\MmiRoutesCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -18,5 +19,6 @@ class MmiBundle extends Bundle
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new MmiRoutesCompilerPass());
+        $container->addCompilerPass(new MaiStructureCompilerPass());
     }
 }
