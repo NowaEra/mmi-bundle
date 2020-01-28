@@ -5,6 +5,7 @@ parameters:
     mmi.mvc.structure.class: NowaEra\MmiBundle\Mvc\Structure
     mmi.mvc.structure_parser.class: NowaEra\MmiBundle\Mvc\StructureParser
     mmi.structure_configurator.class: NowaEra\MmiBundle\Mvc\StructureConfigurator
+    mmi.structure.array: []
 services:
     mmi_view:
         class: "%mmi.mvc.view.class%"
