@@ -4,6 +4,7 @@ parameters:
     mmi.mvc.view.class: Mmi\Mvc\View
     mmi.mvc.structure.class: NowaEra\MmiBundle\Mvc\Structure
     mmi.mvc.structure_parser.class: NowaEra\MmiBundle\Mvc\StructureParser
+    mmi.structure_configurator.class: NowaEra\MmiBundle\Mvc\StructureConfigurator
 services:
     mmi_view:
         class: "%mmi.mvc.view.class%"
@@ -17,6 +18,10 @@ services:
     mmi_structure:
         class: "%mmi.mvc.structure.class%"
         arguments: ["@mmi_structure_parser"]
+        configurator: "@mmi_structure_configurator"
+
+    mmi_structure_configurator:
+        class: "%mmi.structure_configurator.class%"
 
     mmi_front_controller:
         class: "%mmi.app.front_controller.class%"
